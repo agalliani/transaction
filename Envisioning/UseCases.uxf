@@ -8,19 +8,13 @@ bg=orange</panel_attributes><additional_attributes></additional_attributes></ele
 &lt;&lt;include&gt;&gt;</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>467</y><w>240</w><h>200</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;220;180</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>720</x><y>637</y><w>120</w><h>40</h></coordinates><panel_attributes>UC4
 generaTransazione
 bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>637</y><w>230</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;include&gt;&gt;</panel_attributes><additional_attributes>210;20;10;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>520</x><y>667</y><w>110</w><h>50</h></coordinates><panel_attributes>Note..
-bg=white
-Se risposta=true</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>730</x><y>777</y><w>100</w><h>40</h></coordinates><panel_attributes>&lt;&lt;system&gt;&gt;
+&lt;&lt;include&gt;&gt;</panel_attributes><additional_attributes>210;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>730</x><y>777</y><w>100</w><h>40</h></coordinates><panel_attributes>&lt;&lt;system&gt;&gt;
 Ethereum</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>667</y><w>30</w><h>130</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>547</y><w>270</w><h>110</h></coordinates><panel_attributes>lt=&lt;.
 &lt;&lt;include&gt;&gt;</panel_attributes><additional_attributes>10;10;250;90</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>410</x><y>367</y><w>120</w><h>40</h></coordinates><panel_attributes>UC5
 registrazione
-bg=pink</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>262</y><w>80</w><h>120</h></coordinates><panel_attributes>lt=.&gt;
-
-
-
-&lt;&lt;extends&gt;&gt;</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>377</y><w>240</w><h>50</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;30;220;10</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>247</y><w>260</w><h>140</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;120;240;10</additional_attributes></element><element><id>UMLActor</id><coordinates><x>750</x><y>52</y><w>60</w><h>110</h></coordinates><panel_attributes>Admin</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>410</x><y>287</y><w>110</w><h>50</h></coordinates><panel_attributes>Note..
-bg=white
-Se utente semplice</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>410</x><y>227</y><w>120</w><h>40</h></coordinates><panel_attributes>UC6
+bg=pink</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>262</y><w>140</w><h>120</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;
+[se utente semplice]</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>377</y><w>240</w><h>50</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;30;220;10</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>247</y><w>260</w><h>140</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;120;240;10</additional_attributes></element><element><id>UMLActor</id><coordinates><x>750</x><y>52</y><w>60</w><h>110</h></coordinates><panel_attributes>Admin</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>410</x><y>227</y><w>120</w><h>40</h></coordinates><panel_attributes>UC6
 login
 bg=pink</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>530</x><y>212</y><w>160</w><h>50</h></coordinates><panel_attributes>lt=.&gt;
 &lt;&lt;extends&gt;&gt;</panel_attributes><additional_attributes>140;10;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>132</y><w>260</w><h>120</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;100;240;10</additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>142</y><w>50</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;60;30;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>670</x><y>197</y><w>120</w><h>40</h></coordinates><panel_attributes>UC7
@@ -33,4 +27,9 @@ halign=left</panel_attributes><additional_attributes></additional_attributes></e
 
 
 &lt;&lt;include&gt;&gt;</panel_attributes><additional_attributes>10;130;20;10</additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>477</y><w>100</w><h>80</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;include&gt;&gt;</panel_attributes><additional_attributes>50;60;10;10</additional_attributes></element></diagram>
+&lt;&lt;include&gt;&gt;</panel_attributes><additional_attributes>50;60;10;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>730</x><y>500</y><w>160</w><h>70</h></coordinates><panel_attributes>Note..
+ l’utente non deve essere
+necessariamente registrato
+per accedere ai servizi.
+
+bg=light_gray</panel_attributes><additional_attributes></additional_attributes></element></diagram>
