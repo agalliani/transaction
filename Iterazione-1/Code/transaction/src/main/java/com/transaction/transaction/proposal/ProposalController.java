@@ -2,6 +2,8 @@ package com.transaction.transaction.proposal;
 
 import java.util.List;
 
+import com.transaction.transaction.mail.EmailHelper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
@@ -20,6 +22,9 @@ public class ProposalController {
     @Autowired
     private ProposalService proposalService;
 
+    @Autowired
+    private EmailHelper emailHelper;
+
     // POST
     @RequestMapping(method = RequestMethod.POST, value = "/proposals")
     public ResponseEntity<String> createProposal(@RequestBody Proposal prop) {
@@ -30,6 +35,8 @@ public class ProposalController {
                 throw new Exception(message);
             }
             proposalService.createProposal(prop);
+            emailHelper.sendConfirmProposalCreationEmail(prop);
+            emailHelper.sendProposalEmail(prop);
 
             return ResponseEntity.ok("Proposal successfully saved!");
 
@@ -49,9 +56,14 @@ public class ProposalController {
     // PUT
     @PutMapping("/proposals/{id}")
     public ResponseEntity<String> updateProposal(@PathVariable Integer id, @RequestBody Proposal proposal) {
-        proposalService.updateProposal(id, proposal);
+        try {
+            proposalService.updateProposal(id, proposal);
+            return ResponseEntity.ok("Proposal successfully updated!");
 
-        return ResponseEntity.ok("Proposal successfully updated!");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+
     }
 
     // DELETE

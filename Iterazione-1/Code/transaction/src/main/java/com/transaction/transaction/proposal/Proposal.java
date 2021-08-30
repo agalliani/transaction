@@ -20,17 +20,24 @@ public class Proposal {
     
     String name;
     String description;
+    String email;
+    String recipient;
+
 
     // constructors
     public Proposal() {
     }
 
-    public Proposal(Integer id, String name, String description) {
+
+    public Proposal(Integer id, String name, String description, String email, String recipient) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.email = email;
+        this.recipient = recipient;
     }
 
+   
    
 }
 

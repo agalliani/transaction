@@ -20,13 +20,27 @@ public class ProposalService {
         return proposals;
     }
 
-    public void createProposal(Proposal prop) {
-        proposalRepository.save(prop);
+    public void createProposal(Proposal prop) throws Exception {
+        if (!proposalRepository.existsById(prop.getId())) {
+            proposalRepository.save(prop);
+        } else {
+            String message = "A proposal with this ID already exists!";
+            throw new Exception(message);
+        }
+
     }
 
-    public void updateProposal(Integer id, Proposal prop) {
-        // overwrite the existing element in the DB. The id is unique
-        proposalRepository.save(prop);
+    public void updateProposal(Integer id, Proposal prop) throws Exception {
+        //non existing elements can't be updated
+        if (proposalRepository.existsById(prop.getId())) {
+            // overwrite the existing element in the DB. The id is unique
+            proposalRepository.save(prop);
+        }
+        else{
+            String message = "Non existing elements can't be updated!";
+            throw new Exception(message);
+        }
+
     }
 
     public void deleteProposal(Integer id) {
