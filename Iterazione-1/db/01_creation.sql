@@ -1,10 +1,10 @@
-CREATE DATABASE tododb;
-USE tododb;
+use transaction;
 
-CREATE TABLE todo (
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(250),
-    summary VARCHAR(250),
-    description VARCHAR(500)
+create table proposal(
+id int not null primary key auto_increment,
+name varchar(90),
+description varchar(250),
+email varchar(99) not null,
+recipient varchar(99) not null,
+status enum('CONFIRMED', 'DECLINED', 'PENDING')
 );
-
