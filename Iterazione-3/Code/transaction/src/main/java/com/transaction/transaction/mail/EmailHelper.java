@@ -3,6 +3,7 @@ package com.transaction.transaction.mail;
 import javax.mail.internet.MimeMessage;
 
 import com.transaction.transaction.proposal.Proposal;
+import com.transaction.transaction.transaction.Transaction;
 
 import java.nio.charset.StandardCharsets;
 
@@ -27,11 +28,30 @@ public class EmailHelper {
 
     //////////////////////////////////////////////////////////////////////////////////////////////
 
+    public void sendTransactionCreationEnded(Transaction tran) {
+        String subject = "TRANSACTION: Your transaction ID" + tran.getId() + "is succesfully written on the chain";
+        String body = "<p>Dear user, " + tran.getId() + " just saved.</p> <p> Thank you </p>";
+        sendMail(mailProperties.getUsername(), tran.getUser1(), subject, body);
+        sendMail(mailProperties.getUsername(), tran.getUser2(), subject, body);
+
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////
+
+    public void sendTransactionCreationStarted(Transaction tran) {
+        String subject = "TRANSACTION: sending your Proposal ID" + tran.getProposalID() + " to the chain";
+        String body = "<p>Dear user, " + tran.getId() + " just created.</p> <p> It was the ProposalID"
+                + tran.getProposalID() + " with this description: " + tran.getDescription()
+                + "</p> <p>Now you only have to wait the confirmation mail. The chain is working to save your transaction. Thanks";
+        sendMail(mailProperties.getUsername(), tran.getUser1(), subject, body);
+        sendMail(mailProperties.getUsername(), tran.getUser2(), subject, body);
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////
+
     public void sendProposalEmail(Proposal proposal) {
         String subject = "TRANSACTION: A new Proposal for you";
         String body = "<p>Dear user, " + proposal.getName() + " just created a Proposal for you with this description: "
-                + proposal.getDescription()
-                + "</p> <p>Please <a>confirm</a> or <a>decline</a></p> Thanks";
+                + proposal.getDescription() + "</p> <p>Please <a>confirm</a> or <a>decline</a></p> Thanks";
 
         sendMail(mailProperties.getUsername(), proposal.getRecipient(), subject, body);
     }

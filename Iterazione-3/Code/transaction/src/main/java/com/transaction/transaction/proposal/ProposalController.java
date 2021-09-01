@@ -3,6 +3,7 @@ package com.transaction.transaction.proposal;
 import java.util.List;
 
 import com.transaction.transaction.mail.EmailHelper;
+import com.transaction.transaction.transaction.TransactionHelper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -28,6 +29,9 @@ public class ProposalController {
 
     @Autowired
     private EmailHelper emailHelper;
+
+    @Autowired
+    private TransactionHelper tranHelper;
 
     // POST
     @RequestMapping(method = RequestMethod.POST, value = "/proposals")
@@ -82,6 +86,7 @@ public class ProposalController {
             proposalService.confirmProposal(id);
             emailHelper.sendAcceptedToCreatorMail(proposalService.getProposalById(id));
             emailHelper.sendAcceptedToRecipientMail(proposalService.getProposalById(id));
+            tranHelper.createTransaction(proposalService.getProposalById(id));
 
             return ResponseEntity.ok("Proposal successfully confirmed!");
         } catch (Exception e) {
