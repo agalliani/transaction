@@ -28,9 +28,13 @@
             <v-card-title>{{ trans.user1 }} >>> {{ trans.user2 }}</v-card-title>
             <v-card-subtitle>{{ trans.info }} </v-card-subtitle>
             <v-card-text>
-              <p>{{ trans.description }}</p>
-              <p>Metric: {{ trans.metric }}</p>
+              {{ trans.description }}
             </v-card-text>
+            <v-card-actions >
+              <v-col> TransactionID: {{ trans.id }} </v-col>
+
+            
+            </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
