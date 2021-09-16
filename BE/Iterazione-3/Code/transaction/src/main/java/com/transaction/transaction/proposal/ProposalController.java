@@ -10,6 +10,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javassist.NotFoundException;
 
+//cross origin per risolvere localmente il problema dei CORS: in produzione da evitare assolutamente
+@CrossOrigin
 @RestController
 public class ProposalController {
 
@@ -57,7 +60,7 @@ public class ProposalController {
     }
 
     @GetMapping("proposals/{id}")
-    public Proposal getProposalById(@PathVariable Integer id){
+    public Proposal getProposalById(@PathVariable Integer id) {
         return proposalService.getProposalById(id);
     }
 
