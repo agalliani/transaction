@@ -17,24 +17,25 @@ public class TransactionHelper {
     @Autowired
     private TransactionWriter tranWriter;
 
-    AtomicInteger idGen = new AtomicInteger(1000){
-        
+    AtomicInteger idGen = new AtomicInteger(1000) {
+
     };
 
     public void createTransaction(Proposal prop) throws Exception {
 
-        Transaction nuova = new Transaction(
-            idGen.getAndIncrement(),
-            prop.getId(),
-            prop.getEmail(),
-            prop.getRecipient(),
-            prop.getDescription(),
-            "Preprocessing",
-            calcMetric(prop)
-        );
+        Transaction nuova = new Transaction(idGen.getAndIncrement(), prop.getId(), prop.getEmail(), prop.getRecipient(),
+                prop.getDescription(), "Preprocessing", calcMetric(prop));
 
         tranService.createTransaction(nuova);
         tranWriter.sendToEthereum(nuova);
+    }
+
+    public Transaction buildTransaction(Proposal prop) {
+        Transaction nuova = new Transaction(idGen.getAndIncrement(), prop.getId(), prop.getEmail(), prop.getRecipient(),
+                prop.getDescription(), "Preprocessing", calcMetric(prop));
+
+        return nuova;
+
     }
 
     private Integer calcMetric(Proposal prop) {

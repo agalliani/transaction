@@ -18,7 +18,7 @@ import org.springframework.boot.autoconfigure.mail.MailProperties;
 @Component
 public class EmailHelper {
 
-    public static Boolean mailEnabled = true;
+    public static Boolean mailEnabled = false;
 
     @Autowired
     private JavaMailSender mailSender;
