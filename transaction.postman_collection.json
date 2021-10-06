@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "38213242-8ac1-4288-9193-89966e74e308",
+		"name": "transaction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Proposals",
+			"item": [
+				{
+					"name": "Iterazione 1",
+					"item": [
+						{
+							"name": "getAllProposals",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local80}}\\proposals",
+									"host": [
+										"{{local80}}"
+									],
+									"path": [
+										"proposals"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createProposal",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"id\": 15187,\r\n        \"name\": \"AAAAA\",\r\n        \"description\": \"Questa è una breve descrizione.\",\r\n        \"email\": \"andrea.galliani.29@gmail.com\",\r\n        \"recipient\": \"a.galliani@studenti.unibg.it\",\r\n        \"status\": \"PENDING\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local80}}\\proposals",
+									"host": [
+										"{{local80}}"
+									],
+									"path": [
+										"proposals"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateProposal",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Piera\",\r\n    \"description\": \"Questa è una breve descrizione modificata.\",\r\n    \"email\": \"andrea.galliani.29@gmail.com\",\r\n    \"recipient\": \"a.galliani@studenti.unibg.it\",\r\n    \"status\": \"CONFIRMED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local80}}/proposals/1",
+									"host": [
+										"{{local80}}"
+									],
+									"path": [
+										"proposals",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteProposal",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local80}}/proposals/1519",
+									"host": [
+										"{{local80}}"
+									],
+									"path": [
+										"proposals",
+										"1519"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Iterazione 2",
+					"item": [
+						{
+							"name": "confirmProposal",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{local80}}/proposals/confirm/1701",
+									"host": [
+										"{{local80}}"
+									],
+									"path": [
+										"proposals",
+										"confirm",
+										"1701"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "declineProposal",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{local80}}/proposals/decline/17001",
+									"host": [
+										"{{local80}}"
+									],
+									"path": [
+										"proposals",
+										"decline",
+										"17001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getProposalById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local80}}/proposals/1",
+									"host": [
+										"{{local80}}"
+									],
+									"path": [
+										"proposals",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Iterazione 3",
+					"item": [
+						{
+							"name": "getAllTransactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local80}}/transactions",
+									"host": [
+										"{{local80}}"
+									],
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createTransasction",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"proposalID\": 1701,\r\n    \"user1\": \"utente1\",\r\n    \"user2\": \"utente2\",\r\n    \"description\": \"questa è una descrizione\",\r\n    \"info\": \"info\",\r\n    \"metric\": 548\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local80}}/transactions",
+									"host": [
+										"{{local80}}"
+									],
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
